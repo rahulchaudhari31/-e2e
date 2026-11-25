@@ -1,0 +1,19 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: var(--space-md);
+  background: color-mix(in srgb, var(--ink) 88%, transparent);
+}
+
+.dialog {
+  width: min(100%, 880px);
+  max-height: min(88vh, 900px);
+  border: var(--outline-width) solid var(--ink);
+  border-radius: var(--radius-lg);
+  box-shadow: 10px 10px 0 var(--tomato);
+  outline: none;
+  overflow: auto;
+}

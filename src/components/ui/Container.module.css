@@ -1,0 +1,16 @@
+.container {
+  width: min(100% - 2.5rem, var(--container));
+  margin-inline: auto;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: min(100% - 5rem, var(--container));
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    width: min(100% - 7rem, var(--container-wide));
+  }
+}

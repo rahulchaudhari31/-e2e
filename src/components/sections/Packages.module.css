@@ -1,0 +1,118 @@
+.section {
+  --color-outline: var(--ink);
+  --color-text: var(--ink);
+  --color-muted: var(--ink);
+  --color-surface: var(--paper);
+  --shadow-hard: 6px 6px 0 var(--ink);
+  --shadow-hard-sm: 4px 4px 0 var(--ink);
+
+  padding: var(--space-2xl) 0;
+  border-block: var(--outline-width) solid var(--ink);
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin-top: var(--space-xs);
+  font-size: clamp(2.6rem, 5vw, 5.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+}
+
+.lead {
+  max-width: 720px;
+  margin-top: var(--space-sm);
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  line-height: 1.15;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.cardWrap {
+  height: 100%;
+  transform-origin: 50% 0%;
+}
+
+.card {
+  display: grid;
+  align-content: start;
+  gap: var(--space-sm);
+  height: 100%;
+  min-height: 250px;
+  padding: var(--space-md);
+  border: var(--outline-width) solid var(--ink);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-hard);
+  color: var(--ink);
+  transition: transform 0.25s var(--ease-out);
+}
+
+.card:hover {
+  box-shadow: 10px 10px 0 var(--ink);
+  transform: translate(-2px, -2px);
+}
+
+.cardWrap:nth-child(3n + 1) .card {
+  background: var(--sun);
+}
+
+.cardWrap:nth-child(3n + 2) .card {
+  background: var(--lilac);
+}
+
+.cardWrap:nth-child(3n + 3) .card {
+  background: var(--mint);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.index {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  font-weight: 700;
+}
+
+.cardTitle {
+  font-size: var(--step-2);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.cardBody {
+  font-size: var(--step--1);
+  line-height: 1.45;
+}
+
+.pending .cardWrap {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cardWrap {
+    opacity: 1;
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-hard);
+  }
+}

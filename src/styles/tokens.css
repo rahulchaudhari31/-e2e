@@ -1,0 +1,107 @@
+:root {
+  color-scheme: light;
+
+  --ink: #17121f;
+  --tomato: #ff5a36;
+  --accent-text: #a82a15;
+  --sun: #ffd84d;
+  --lilac: #e4dcff;
+  --paper: #fbf7f0;
+  --violet: #5b3fd6;
+  --mint: #2fbf9b;
+
+  --color-ink: var(--ink);
+  --color-tomato: var(--tomato);
+  --color-sun: var(--sun);
+  --color-lilac: var(--lilac);
+  --color-paper: var(--paper);
+  --color-violet: var(--violet);
+  --color-mint: var(--mint);
+
+  --color-bg: var(--paper);
+  --color-bg-alt: var(--lilac);
+  --color-surface: #ffffff;
+  --color-surface-2: var(--lilac);
+  --color-text: var(--ink);
+  --color-muted: #5d5568;
+  --color-outline: var(--ink);
+  --color-on-accent: var(--ink);
+  --color-on-ink: var(--paper);
+
+  --color-line: var(--color-outline);
+  --color-line-strong: var(--color-outline);
+  --color-panel: var(--color-surface);
+  --color-panel-2: var(--color-surface-2);
+  --color-ink-soft: var(--color-bg-alt);
+  --color-pink: var(--tomato);
+  --color-cyan: var(--violet);
+  --color-lime: var(--sun);
+  --color-orange: var(--tomato);
+  --color-white: var(--paper);
+  --color-black: var(--ink);
+
+  --font-display: "Fredoka", "Trebuchet MS", sans-serif;
+  --font-body: "Nunito", "Segoe UI", sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+
+  --step--2: clamp(0.78rem, 0.74rem + 0.18vw, 0.86rem);
+  --step--1: clamp(0.92rem, 0.87rem + 0.24vw, 1.02rem);
+  --step-0: clamp(1rem, 0.96rem + 0.24vw, 1.14rem);
+  --step-1: clamp(1.24rem, 1.12rem + 0.55vw, 1.6rem);
+  --step-2: clamp(1.6rem, 1.38rem + 1.05vw, 2.3rem);
+  --step-3: clamp(2.15rem, 1.72rem + 1.95vw, 3.55rem);
+  --step-4: clamp(2.95rem, 2.15rem + 4vw, 5.9rem);
+  --step-5: clamp(3.85rem, 2.6rem + 6.5vw, 8.5rem);
+
+  --space-2xs: 0.35rem;
+  --space-xs: 0.65rem;
+  --space-sm: 1rem;
+  --space-md: 1.75rem;
+  --space-lg: 2.75rem;
+  --space-xl: 4.5rem;
+  --space-2xl: 6.5rem;
+  --space-3xl: 10rem;
+
+  --container: 1240px;
+  --container-wide: 1480px;
+
+  --radius-sm: 14px;
+  --radius-md: 24px;
+  --radius-lg: 36px;
+  --radius-pill: 999px;
+
+  --outline-width: 2px;
+  --shadow-hard: 6px 6px 0 var(--color-outline);
+  --shadow-hard-sm: 4px 4px 0 var(--color-outline);
+  --shadow-soft: var(--shadow-hard);
+  --shadow-glow: 6px 6px 0 var(--sun);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --header-height: 84px;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --accent-text: #ff8a6b;
+  --color-bg: var(--ink);
+  --color-bg-alt: #241d31;
+  --color-surface: #241d31;
+  --color-surface-2: #33284a;
+  --color-text: var(--paper);
+  --color-muted: var(--lilac);
+  --color-outline: var(--paper);
+  --color-on-accent: var(--ink);
+  --color-on-ink: var(--paper);
+
+  --color-line: var(--color-outline);
+  --color-line-strong: var(--color-outline);
+  --color-panel: var(--color-surface);
+  --color-panel-2: var(--color-surface-2);
+  --color-ink-soft: var(--color-bg-alt);
+  --color-white: var(--paper);
+}

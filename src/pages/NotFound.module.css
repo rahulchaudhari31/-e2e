@@ -1,0 +1,49 @@
+.section {
+  --color-outline: var(--ink);
+  --color-text: var(--ink);
+  --color-muted: var(--ink);
+  --color-surface: var(--paper);
+  --shadow-hard: 6px 6px 0 var(--ink);
+  --shadow-hard-sm: 4px 4px 0 var(--ink);
+
+  display: grid;
+  place-items: center;
+  min-height: 70vh;
+  padding: var(--space-2xl) 0;
+  color: var(--ink);
+  background: var(--sun);
+}
+
+.inner {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-sm);
+  max-width: min(100% - 2.5rem, 720px);
+  padding: var(--space-xl) var(--space-md);
+  border: var(--outline-width) solid var(--ink);
+  border-radius: var(--radius-lg);
+  color: var(--ink);
+  background: var(--paper);
+  box-shadow: 10px 10px 0 var(--ink);
+  text-align: center;
+}
+
+.mascot {
+  max-width: 200px;
+}
+
+.code {
+  font-size: var(--step-5);
+  line-height: 0.8;
+  color: var(--accent-text);
+}
+
+.message {
+  color: var(--ink);
+  font-size: var(--step-1);
+}
+
+.inner button,
+.inner a {
+  margin-top: var(--space-sm);
+}

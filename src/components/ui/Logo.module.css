@@ -1,0 +1,24 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+}
+
+.logo img {
+  width: 100%;
+  max-width: 158px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s var(--ease-out);
+}
+
+.logo:hover img {
+  transform: rotate(-5deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo:hover img {
+    transform: none;
+  }
+}

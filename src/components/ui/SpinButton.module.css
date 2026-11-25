@@ -1,0 +1,69 @@
+.button {
+  position: relative;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 132px;
+  height: 132px;
+  border: var(--outline-width) solid var(--color-outline);
+  border-radius: var(--radius-pill);
+  color: var(--ink);
+  background: var(--sun);
+  box-shadow: var(--shadow-hard);
+  transition: transform 0.25s var(--ease-out);
+}
+
+.button:hover {
+  box-shadow: 10px 10px 0 var(--color-outline);
+  transform: translate(-3px, -3px) rotate(-6deg);
+}
+
+.button:active {
+  box-shadow: 2px 2px 0 var(--color-outline);
+  transform: translate(4px, 4px);
+}
+
+.ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: spin 18s linear infinite;
+}
+
+.ring text {
+  fill: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.center {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border: var(--outline-width) solid var(--color-outline);
+  border-radius: var(--radius-pill);
+  color: var(--paper);
+  background: var(--tomato);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ring {
+    animation: none;
+  }
+
+  .button:hover,
+  .button:active {
+    box-shadow: var(--shadow-hard);
+    transform: none;
+  }
+}

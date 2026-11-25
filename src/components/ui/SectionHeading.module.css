@@ -1,0 +1,42 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  max-width: 760px;
+}
+
+.center {
+  align-items: center;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--accent-text);
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: var(--step-3);
+}
+
+.body {
+  max-width: 62ch;
+  font-size: var(--step-1);
+  color: var(--color-muted);
+}
+
+.rule {
+  width: 72px;
+  height: 4px;
+  margin-top: var(--space-xs);
+  background: linear-gradient(90deg, var(--tomato), var(--sun));
+}
+
+.center .rule {
+  margin-inline: auto;
+}

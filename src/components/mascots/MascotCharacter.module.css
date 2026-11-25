@@ -1,0 +1,52 @@
+.mascot {
+  width: 100%;
+  filter: drop-shadow(5px 5px 0 color-mix(in srgb, var(--color-outline) 28%, transparent));
+}
+
+.mascot svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.body,
+.leg,
+.eyes,
+.pupil,
+.accessory {
+  transform-box: fill-box;
+}
+
+.body,
+.leg {
+  transform-origin: 50% 100%;
+}
+
+.eyes {
+  transform-origin: 50% 50%;
+  animation: blink 4.8s infinite;
+}
+
+@keyframes blink {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  95% {
+    transform: scaleY(0.08);
+  }
+
+  97% {
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eyes {
+    animation: none;
+    transform: none;
+  }
+}

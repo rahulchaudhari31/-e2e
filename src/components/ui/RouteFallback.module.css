@@ -1,0 +1,38 @@
+.fallback {
+  display: grid;
+  place-items: center;
+  gap: var(--space-sm);
+  min-height: 60vh;
+  padding: var(--space-2xl) var(--space-md);
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+.plug {
+  width: 54px;
+  height: 54px;
+  border: var(--outline-width) solid var(--color-outline);
+  border-radius: 50%;
+  border-top-color: var(--tomato);
+  animation: spin 0.9s linear infinite;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plug {
+    animation: none;
+    border-color: var(--color-outline);
+  }
+}

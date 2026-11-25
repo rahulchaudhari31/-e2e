@@ -1,0 +1,52 @@
+:global(body.has-custom-cursor),
+:global(body.has-custom-cursor *) {
+  cursor: none !important;
+}
+
+.cursor {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.cursor[data-visible='true'] {
+  opacity: 1;
+}
+
+.ring,
+.dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.ring {
+  transition: transform 0.12s linear;
+}
+
+.ringInner {
+  display: block;
+  width: 34px;
+  height: 34px;
+  border: var(--outline-width) solid var(--paper);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--ink);
+  transform: scale(1);
+  transition: transform 0.2s var(--ease-out);
+}
+
+.cursor[data-active='true'] .ringInner {
+  transform: scale(1.45);
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--tomato);
+  box-shadow: 0 0 0 2px var(--paper);
+}

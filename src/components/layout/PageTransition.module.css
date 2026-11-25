@@ -1,0 +1,7 @@
+.page {
+  position: relative;
+  flex: 1;
+  min-height: 70vh;
+  padding-top: var(--header-height);
+  overflow: visible;
+}

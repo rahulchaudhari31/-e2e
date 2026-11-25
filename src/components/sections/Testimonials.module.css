@@ -1,0 +1,66 @@
+.section {
+  --color-outline: var(--ink);
+  --color-text: var(--ink);
+  --color-muted: var(--ink);
+  --color-surface: var(--paper);
+  --shadow-hard: 6px 6px 0 var(--ink);
+  --shadow-hard-sm: 4px 4px 0 var(--ink);
+
+  padding: var(--space-xl) 0 var(--space-2xl);
+  border-block: var(--outline-width) solid var(--ink);
+  color: var(--ink);
+  background: var(--sun);
+}
+
+.section p {
+  color: var(--ink);
+}
+
+.track {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: var(--space-sm);
+  margin-top: var(--space-xl);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  padding: var(--space-md);
+  border: var(--outline-width) solid var(--ink);
+  border-radius: var(--radius-md);
+  color: var(--ink);
+  background: var(--paper);
+  box-shadow: var(--shadow-hard);
+}
+
+.quoteIcon {
+  color: var(--accent-text);
+}
+
+.quote {
+  margin: var(--space-md) 0 var(--space-lg);
+  color: var(--ink);
+  font-size: var(--step-0);
+  line-height: 1.5;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: auto;
+}
+
+.person img {
+  width: 52px;
+  height: 52px;
+  border: var(--outline-width) solid var(--ink);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.person h3 {
+  font-size: var(--step--1);
+}

@@ -1,0 +1,224 @@
+.section {
+  --color-outline: var(--paper);
+  --color-text: var(--paper);
+  --color-muted: var(--lilac);
+  --color-surface: var(--ink);
+  --shadow-hard: 6px 6px 0 var(--paper);
+  --shadow-hard-sm: 4px 4px 0 var(--paper);
+
+  position: relative;
+  color: var(--paper);
+  background: var(--ink);
+}
+
+.stage {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: var(--space-xl) 0;
+  overflow: hidden;
+}
+
+.inner {
+  width: 100%;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  font-weight: 700;
+  letter-spacing: 0.24em;
+}
+
+.title {
+  max-width: 760px;
+  margin-top: var(--space-xs);
+  font-size: clamp(2.4rem, 4.8vw, 5rem);
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+}
+
+.layout {
+  display: grid;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-xs);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.step {
+  display: grid;
+  gap: 0.35rem;
+  padding: var(--space-sm);
+  border: var(--outline-width) solid var(--color-outline);
+  border-radius: var(--radius-md);
+  opacity: 0.42;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s var(--ease-out);
+}
+
+.step[data-active="true"] {
+  color: var(--ink);
+  background: var(--step-color);
+  box-shadow: var(--shadow-hard-sm);
+  opacity: 1;
+  transform: translateY(-6px);
+}
+
+.stepNumber {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  font-weight: 700;
+}
+
+.stepLabel {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.box {
+  --cardboard: #c58c4d;
+
+  position: relative;
+  width: min(100%, 860px);
+  aspect-ratio: 16 / 8;
+  margin-inline: auto;
+  border: var(--outline-width) solid var(--ink);
+  border-radius: var(--radius-md);
+  background:
+    repeating-linear-gradient(90deg, color-mix(in srgb, var(--cardboard) 86%, var(--ink)) 0 2px, transparent 2px 16px),
+    var(--cardboard);
+  box-shadow: 12px 12px 0 var(--tomato);
+}
+
+.tape {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 120px;
+  height: 24px;
+  border: var(--outline-width) solid var(--ink);
+  background: color-mix(in srgb, var(--paper) 72%, transparent);
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+.cells {
+  position: absolute;
+  inset: 12% 4% 8%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-xs);
+}
+
+.cell {
+  display: grid;
+  place-items: center;
+  border: var(--outline-width) dashed var(--ink);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.cell[data-filled="true"] {
+  border-style: solid;
+  background: var(--cell-color);
+}
+
+.sticker {
+  position: absolute;
+  top: -24px;
+  right: -18px;
+  z-index: 3;
+  padding: 0.65rem 1.2rem;
+  border: var(--outline-width) solid var(--ink);
+  border-radius: var(--radius-pill);
+  color: var(--ink);
+  background: var(--paper);
+  box-shadow: var(--shadow-hard-sm);
+  font-family: var(--font-display);
+  font-size: var(--step-0);
+  font-weight: 700;
+  text-transform: uppercase;
+  transform-origin: 50% 50%;
+}
+
+.balls {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ball {
+  position: absolute;
+  top: -84px;
+  left: calc(12.5% + var(--ball-index) * 25%);
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  border: var(--outline-width) solid var(--ink);
+  border-radius: 50%;
+  color: var(--ink);
+  background: var(--ball-color);
+  box-shadow: var(--shadow-hard-sm);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateX(-50%);
+}
+
+.reduced .ball {
+  opacity: 1;
+}
+
+@media (max-width: 780px) {
+  .stage {
+    padding: var(--space-lg) 0;
+  }
+
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .box {
+    aspect-ratio: 4 / 3;
+  }
+
+  .ball {
+    top: -58px;
+    width: 44px;
+    height: 44px;
+    font-size: 0.55rem;
+  }
+
+  .sticker {
+    right: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step {
+    transition: none;
+  }
+
+  .step[data-active="true"] {
+    transform: none;
+  }
+}

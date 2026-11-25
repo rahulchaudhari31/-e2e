@@ -1,0 +1,82 @@
+.mascot {
+  width: 100%;
+  max-width: 220px;
+  filter: drop-shadow(6px 6px 0 color-mix(in srgb, var(--color-outline) 28%, transparent));
+  animation: float 6s ease-in-out infinite;
+}
+
+.mascot svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.orbit {
+  transform-origin: 110px 110px;
+  animation: spin 24s linear infinite;
+}
+
+.satellite {
+  transform-origin: 110px 110px;
+  animation: spin 8s linear infinite reverse;
+}
+
+.signal {
+  filter: drop-shadow(6px 6px 0 color-mix(in srgb, var(--tomato) 30%, transparent));
+  animation-delay: -2s;
+}
+
+.pulse {
+  stroke-dasharray: 90;
+  transform-origin: center;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mascot,
+  .orbit,
+  .satellite,
+  .signal,
+  .pulse {
+    animation: none;
+    transform: none;
+  }
+
+  .pulse {
+    opacity: 1;
+    transform: none;
+  }
+
+  .orbit,
+  .satellite {
+    transform-origin: 110px 110px;
+  }
+}

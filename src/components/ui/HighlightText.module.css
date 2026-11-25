@@ -1,0 +1,26 @@
+.highlight {
+  position: relative;
+  display: inline-block;
+  padding-inline: 0.08em;
+  color: inherit;
+  white-space: inherit;
+}
+
+.bar {
+  position: absolute;
+  right: 0;
+  bottom: 0.08em;
+  left: 0;
+  z-index: -1;
+  height: 0.28em;
+  border-radius: var(--radius-pill);
+  background: var(--highlight-color, var(--sun));
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar {
+    transform: scaleX(1);
+  }
+}
